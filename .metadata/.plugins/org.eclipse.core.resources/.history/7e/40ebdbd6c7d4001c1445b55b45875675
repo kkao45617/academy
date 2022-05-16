@@ -1,0 +1,68 @@
+package ex01;
+
+class apple{
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "apple";
+	}
+}
+
+class orange{
+	@Override
+			public String toString() {
+				// TODO Auto-generated method stub
+				return "orange";
+			}
+}
+/*
+class applebox{
+	private apple ap;
+
+	public apple getAp() {
+		return ap;
+	}
+
+	public void setAp(apple ap) {
+		this.ap = ap;
+	}
+}
+class orangebox{
+	private orange or;
+
+	public orange getOr() {
+		return or;
+	}
+
+	public void setOr(orange or) {
+		this.or = or;
+	}
+}
+*/
+
+class box{
+	private Object ob;
+
+	public Object getOb() {
+		return ob;
+	}
+
+	public void setOb(Object ob) {
+		this.ob = ob;
+	}
+	
+}
+public class ex01 {
+
+	public static void main(String[] args) {
+		box abox= new box();
+		box obox = new box();
+		
+		abox.setOb(new apple());
+		obox.setOb(new orange());
+		
+		apple ap = abox.getOb();
+		System.out.println(ap);
+	}
+
+}
