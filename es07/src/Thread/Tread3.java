@@ -1,4 +1,4 @@
-package Thread;
+/*package Thread;
 
 public class Tread3 {
 
@@ -27,4 +27,4 @@ class thread3 implements Runnable{
 			System.out.println(Thread.currentThread().getName());
 		}
 	}
-}
+}*/
