@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="ex07.box"/>
-    <fullyQualifiedTypeName name="java.lang.Object"/>
-    <fullyQualifiedTypeName name="ex09.toy"/>
     <fullyQualifiedTypeName name="ex09.boxhandler"/>
     <fullyQualifiedTypeName name="ex012.fruit"/>
     <fullyQualifiedTypeName name="ex012.grape"/>
@@ -59,5 +56,8 @@
     <fullyQualifiedTypeName name="java.util.function.Supplier"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.function.IntSupplier"/>
+    <fullyQualifiedTypeName name="com.sun.tools.javadoc.main.JavaScriptScanner.Reporter"/>
+    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 </qualifiedTypeNameHistroy>
