@@ -19,7 +19,7 @@ interface weapon{
 	public void attack();
 }
 class knife implements weapon{
-	public void attack() {1
+	public void attack() {
 		System.out.println("칼공격");
 	}
 }
