@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-		가나다라마바사
+	<form action="forwardtest.jsp">
+	<input type="text" name="age">
+	<input type="submit" value="전송">
+	</form>
 </body>
 </html>
