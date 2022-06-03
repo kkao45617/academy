@@ -23,8 +23,17 @@ public class loginservlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String url="member/login.jsp";
+		HttpSession session= request.getSession();
+		if(session.getAttribute("loginuser")!=null) {
+			url="main.jsp";
+		}
+		RequestDispatcher dis=request.getRequestDispatcher(url);
+		dis.forward(request, response);
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("member/login.jsp");
 		dispatcher.forward(request, response);
+		
 	}
 
 

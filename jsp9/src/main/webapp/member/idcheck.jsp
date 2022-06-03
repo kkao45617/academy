@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="script/member2.js"></script>
 </head>
 <body>
 	<h2>아이디 중복 확인</h2>
@@ -21,7 +22,7 @@
 			${userid}는 이미 사용중입니다.
 		</c:if>
 		<c:if test="${result==-1 }">
-			${userid }는 사용가능한 아이디입니다.
+			${userid}는 사용가능한 아이디입니다.
 			<input type="button" value="사용" class="cancel" onclick="idok('${userid}')">
 			
 		</c:if>

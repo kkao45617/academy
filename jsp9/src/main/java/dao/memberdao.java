@@ -109,7 +109,7 @@ public class memberdao {
 
 	public int confirmid(String userid) {
 		int result=-1;
-		String sql="select userid from member where userid=?";
+		String sql="select userid from member where userid=?";//아이디 중복값을 확인하여 null값이 나오는지 확인한다
 		Connection conn=null;
 		PreparedStatement pstmt=null;
 		ResultSet rs= null;
@@ -139,4 +139,69 @@ public class memberdao {
 		
 		return result;
 	}
+
+	public int insertmember(membervo mvo) {
+		
+		int result =-1;
+		String sql= "insert into member(name,userid,pwd,email,phone,admin)"+"values(?,?,?,?,?,?)";
+		
+		Connection conn=null;
+		PreparedStatement pstmt =null;
+		try {
+			conn =getconnection();
+			pstmt= conn.prepareCall(sql);
+			pstmt.setString(1, mvo.getName());
+			pstmt.setString(2, mvo.getUserid());
+			pstmt.setString(3, mvo.getPwd());
+			pstmt.setString(4, mvo.getEmail());
+			pstmt.setString(5, mvo.getPhone());
+			pstmt.setInt(6, mvo.getAdmin());
+			
+			result=pstmt.executeUpdate();
+			System.out.println(result);
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(pstmt !=null) pstmt.close();
+				if(conn !=null)conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return 0;
+	}
+
+	public int updatemember(membervo mvo) {
+		int result =-1;
+		String sql = "update member set pwd=?,email=?,phone=?,admin=? where userid=?";
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		try {
+			conn=getconnection();
+			pstmt= conn.prepareStatement(sql);
+			pstmt.setString(1, mvo.getPwd());
+			pstmt.setString(2, mvo.getEmail());
+			pstmt.setString(3, mvo.getPhone());
+			pstmt.setInt(4, mvo.getAdmin());
+			pstmt.setString(5, mvo.getUserid());
+			result=pstmt.executeUpdate();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn!=null)conn.close();
+				if(pstmt!=null) pstmt.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+		
+	}
+	
+	
 }

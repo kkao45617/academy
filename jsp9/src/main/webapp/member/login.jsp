@@ -27,6 +27,7 @@
 				<input type="submit" value="로그인" onclick="return logincheck()">
 				<input type="reset" value="취소">
 				<input type="button" value="회원가입" onclick="location.href='join.do'">
+				<!-- location을 이용하여 서블릿으로 이동 -->
 				</td>
 			</tr>
 		<tr>
