@@ -122,12 +122,13 @@ public class boarddao {
 	   
 	   try {
 		getConnection();
-		String sql="insert into jspboard(name,subject,content,pwd,regdate) values(?,?,?,?,?)";
+		String sql="insert into jspboard(name,subject,content,pwd,regdate) values(?,?,?,?,now())";
 		ps=conn.prepareStatement(sql);
 		ps.setString(1, vo.getName());
 		ps.setString(2,vo.getSubject());
 		ps.setString(3, vo.getContent());
 		ps.setString(4, vo.getPwd());
+		
 		ps.executeUpdate();
 		
 	} catch (Exception e) {
@@ -174,4 +175,108 @@ public class boarddao {
 	   return vo;
    }
    
+   //수정페이지
+   public boardvo boardupdatedata(int no) {
+	   boardvo vo = new boardvo();
+	   try {
+			
+		   getConnection();
+	
+		   
+		   String sql="select no,name,subject,content,date_format(regdate,'%Y-%m-%d'),hit"
+		   +" from jspboard where no=? ";
+		   ps=conn.prepareStatement(sql);
+		   ps.setInt(1, no);
+		   ResultSet rs= ps.executeQuery();
+		   if(rs.next()) {
+			   vo.setNo(rs.getInt(1));
+			   vo.setName(rs.getString(2));
+			   vo.setSubject(rs.getString(3));
+			   vo.setContent(rs.getString(4));
+			   vo.setDbday(rs.getString(5));
+			   vo.setHit(rs.getInt(6));
+			   rs.close();
+		   }
+	} catch (Exception e) {
+		e.printStackTrace();
+	}finally {
+		disConnection();
+	}
+	   
+	   return vo;
+   }
+   
+   public boolean boardupdate(boardvo vo) {
+	      boolean check = false;
+	      
+	      try {
+	         getConnection();
+	         
+	         String sql = "select pwd from jspBoard where no=?";
+	         ps = conn.prepareStatement(sql);
+	         ps.setInt(1, vo.getNo());
+	         ResultSet rs = ps.executeQuery();
+	         String check_pwd="";
+	         
+	         if(rs.next()) {
+	            check_pwd = rs.getString(1);
+	            
+	            rs.close();
+	         }
+	         if(check_pwd.equals(vo.getPwd())) {
+	            check = true;
+	            sql = "update jspBoard set name=?, subject=?, content=? where no=?";
+	            ps = conn.prepareStatement(sql);
+	            ps.setString(1, vo.getName());
+	            ps.setString(2, vo.getSubject());
+	            ps.setString(3, vo.getContent());
+	            ps.setInt(4, vo.getNo());
+	            ps.executeUpdate();
+	         }
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      }finally {
+	         disConnection();
+	      }
+	      return check;
+	   }//boardUpdate
+   
+   public boolean boarddelete(int no,String pwd) {
+	   boolean chk=false;
+
+	   try {
+			
+		   getConnection();
+	
+		   
+		   String sql="select pwd from jspboard where no=? ";
+		   ps=conn.prepareStatement(sql);
+		   ps.setInt(1,no);
+		   String chk_pwd="";
+		   ResultSet rs= ps.executeQuery();
+		   if(rs.next()) {
+			   chk_pwd= rs.getString(1);
+			   rs.close();
+		   }
+		   if(chk_pwd.equals(pwd)) {
+			   chk=true;
+			   
+			   sql="delete from jspboard where no=?";
+			   ps=conn.prepareStatement(sql);
+			   ps.setInt(1, no);
+			 
+			   
+			   ps.executeUpdate();
+		   }
+	} catch (Exception e) {
+		e.printStackTrace();
+	}finally {
+		disConnection();
+	}
+	   
+	   
+	   return chk;
+   }
+  
+ 
 }
