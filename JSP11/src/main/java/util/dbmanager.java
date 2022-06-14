@@ -16,7 +16,7 @@ public static Connection getconnection() {
 		Context envcontext = (Context)initcontext.lookup("java:/comp/env");
 		DataSource ds = (DataSource)envcontext.lookup("jdbc/myoracle");
 		conn=ds.getConnection();
-		System.out.println("db 연결성공");
+	
 	}catch (Exception e) {
 			e.printStackTrace();
 		}

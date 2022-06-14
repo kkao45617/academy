@@ -33,6 +33,7 @@ public class productdao {
 			conn=dbmanager.getconnection();
 			pstmt=conn.prepareStatement(sql);
 			rs=pstmt.executeQuery();
+			
 			while(rs.next()) {
 				productvo pvo=new productvo();
 				pvo.setCode(rs.getInt("code"));
@@ -102,4 +103,43 @@ public class productdao {
 		
 		return pvo;
 	}
+	public void updateproduct(productvo pvo) {
+		String sql= "update product set name=?, price=?, pictureurl=?,description=? where code=?";
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		try {
+			conn=dbmanager.getconnection();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, pvo.getName());
+			pstmt.setInt(2, pvo.getPrice());
+			pstmt.setString(3, pvo.getPictureurl());
+			pstmt.setString(4, pvo.getDescription());
+			pstmt.setInt(5, pvo.getCode());
+			pstmt.executeUpdate();
+			
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			dbmanager.closeconnection(conn, pstmt);
+		}
+	}
+	public void productdelete(productvo pvo) {
+		String sql="DELETE FROM product WHERE code=?";
+				Connection conn=null;
+		PreparedStatement pstmt=null;
+		try {
+			conn=dbmanager.getconnection();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, pvo.getCode());
+			pstmt.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			dbmanager.closeconnection(conn, pstmt);
+			
+		}
+	}
+
+	
 }

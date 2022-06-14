@@ -102,18 +102,12 @@
 					Note: The pattern used is equivalent to using pattern="common" -->
 				<Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-				<Context docBase="C:\project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\jsp9" path="/jsp9" reloadable="true" source="org.eclipse.jst.jee.server:jsp9">
+				<Context docBase="C:\project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\jsp13" path="/jsp13" reloadable="true" source="org.eclipse.jst.jee.server:jsp13">
 					<Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="jdbc/myoracle" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="scott"/>
 				</Context>
-				<Context docBase="C:\project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\boardproject" path="/boardproject" reloadable="true" source="org.eclipse.jst.jee.server:boardproject"/>
-				<Context docBase="C:\project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Industryanswer" path="/Industryanswer" reloadable="true" source="org.eclipse.jst.jee.server:Industryanswer"/>
-				<Context docBase="C:\project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\jsp8" path="/jsp8" reloadable="true" source="org.eclipse.jst.jee.server:jsp8"/>
-				<Context docBase="C:\project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\jsp10" path="/jsp10" reloadable="true" source="org.eclipse.jst.jee.server:jsp10"/>
-
 				<Context docBase="C:\project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\JSP11" path="/JSP11" reloadable="true" source="org.eclipse.jst.jee.server:JSP11">
 					<Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="jdbc/myoracle" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="scott"/>
-				</Context>
-
+					</Context>
 			</Host>
 		</Engine>
 	</Service>

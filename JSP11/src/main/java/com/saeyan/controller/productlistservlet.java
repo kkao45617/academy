@@ -24,6 +24,7 @@ public class productlistservlet extends HttpServlet {
 		List<productvo> vo = pdao.selectallproducts();
 		request.setAttribute("productlist", vo);
 		
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("product/productlist.jsp");
 		dispatcher.forward(request, response);
 	}
