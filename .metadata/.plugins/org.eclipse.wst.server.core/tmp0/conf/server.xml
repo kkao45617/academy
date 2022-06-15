@@ -107,7 +107,11 @@
 				</Context>
 				<Context docBase="C:\project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\JSP11" path="/JSP11" reloadable="true" source="org.eclipse.jst.jee.server:JSP11">
 					<Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="jdbc/myoracle" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="scott"/>
-					</Context>
+				</Context>
+			<Context docBase="C:\project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\jsp14" path="/jsp14" reloadable="true" source="org.eclipse.jst.jee.server:jsp14">
+			<Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="jdbc/myoracle" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="scott"/>
+			
+			</Context>
 			</Host>
 		</Engine>
 	</Service>
