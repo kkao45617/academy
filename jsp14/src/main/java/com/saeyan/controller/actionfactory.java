@@ -1,4 +1,9 @@
-package com.saeyan.controller.action;
+package com.saeyan.controller;
+
+import com.saeyan.controller.action.action;
+import com.saeyan.controller.action.boardfromaction;
+import com.saeyan.controller.action.boardlistaction;
+import com.saeyan.controller.action.boardwriteaction;
 
 public class actionfactory{
 	private static actionfactory instance = new actionfactory();
