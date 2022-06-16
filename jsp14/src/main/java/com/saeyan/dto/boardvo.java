@@ -13,7 +13,7 @@ import lombok.Setter;
 @Data
 public class boardvo {
 	private Integer num, readcount;
-	private String pass, name, email, title, contente;
+	private String pass, name, email, title, content;
 	private Timestamp writedate;
 	
 	

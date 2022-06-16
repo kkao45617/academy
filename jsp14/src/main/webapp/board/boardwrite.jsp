@@ -5,7 +5,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="css/shopping.css">
-
+<script type="text/javascript" src="script/board.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -40,7 +40,7 @@
 		<br>
 		<input type="submit" value="등록" onclick="return boardcheck()">
 		<input type="reset" value="다시작성">
-		<input type="button" value="목록" onclick="location.href='boardservlet?commen=board_list'">
+		<input type="button" value="목록" onclick="location.href='boardservlet?command=board_list'">
 	</form>
 </div>
 

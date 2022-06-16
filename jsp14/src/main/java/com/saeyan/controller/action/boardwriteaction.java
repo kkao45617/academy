@@ -20,7 +20,7 @@ public class boardwriteaction implements action {
 		vo.setPass(request.getParameter("pass"));
 		vo.setEmail(request.getParameter("email"));
 		vo.setTitle(request.getParameter("title"));
-		vo.setContente(request.getParameter("content"));
+		vo.setContent(request.getParameter("content"));
 		
 		boardDao bdao = boardDao.getinstance();
 		bdao.insertboard(vo);
