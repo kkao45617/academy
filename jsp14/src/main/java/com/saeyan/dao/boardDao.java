@@ -154,6 +154,7 @@ public class boardDao {
 		try {
 			conn=dbmanager.getconnection();
 			pstmt=conn.prepareStatement(sql);
+			
 			pstmt.setString(1,num);
 			pstmt.executeUpdate();
 		}catch (Exception e) {

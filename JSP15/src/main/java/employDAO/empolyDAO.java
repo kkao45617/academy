@@ -82,8 +82,9 @@ public class empolyDAO {
 		
 		try {
 			conn=dbmanager.getconnection();
+			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, id);
-			pstmt.executeQuery();
+			rs=pstmt.executeQuery();
 			
 			if(rs.next()) {
 				vo.setId(rs.getString(1));
@@ -97,12 +98,58 @@ public class empolyDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			dbmanager.closeconnection(conn, pstmt);
+			dbmanager.closeconnection(conn, pstmt,rs);
 		}
 		
-		return null;
+		return vo;
 	}
+
+	public void employdelete(String id) {
+		String sql= "delete from EMPLOYEES where ID=?";
+		Connection conn=null;
+		PreparedStatement pstmt= null;
+		
+		System.out.println("sql들어가기전");
+		try {
+			System.out.println("들어온후");
+			conn=dbmanager.getconnection();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			dbmanager.closeconnection(conn, pstmt);
+		}
+	}
+
+	public void employupdate(employeesVO vo) {
+		String sql= "update employees set  pass=?,name=?, LEV=?,GENDER=?,PHONE=? where id=?";
+		Connection conn=null;
+		PreparedStatement pstmt= null;
 	
+
+		try {
+			conn=dbmanager.getconnection();
+			pstmt=conn.prepareStatement(sql);
+			
+			pstmt.setString(1, vo.getPass());
+			pstmt.setString(2, vo.getName());
+			pstmt.setString(3, vo.getLev() );
+			pstmt.setString(4, vo.getGender());
+			pstmt.setString(5, vo.getPhone());
+			pstmt.setString(6, vo.getId());
+			
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			dbmanager.closeconnection(conn, pstmt);
+		}
+	}
+
+
 	
 
 }
