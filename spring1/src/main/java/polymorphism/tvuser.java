@@ -6,11 +6,12 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class tvuser {
 	public static void main(String[] args) {
 		AbstractApplicationContext factory = new GenericXmlApplicationContext("appilcationcontext.xml");
-		TV tv= (TV)factory.getBean("tv");
-		tv.poweron();
-		tv.pweroff();
-		tv.volumedown();
-		tv.volumeup();
+		TV tv1= (TV)factory.getBean("tv1");
+
+		tv1.poweron();
+		tv1.pweroff();
+		tv1.volumedown();
+		tv1.volumeup();
 		factory.close();
 	}
 }
