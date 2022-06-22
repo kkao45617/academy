@@ -2,8 +2,27 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
-	 <bean id="collectionbean" class="com.springbook.ioc.indjection.collectionbean">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+
+
+		<context:component-scan base-package="com.springbook.diz"/>
+		
+		<bean id="log" class="com.springbook.diz.common.log4jadvice"></bean>
+		
+		<aop:config>
+			<aop:pointcut expression="execution(* com.springbook.diz..*impl.*(..))" id="allpointcut"/>
+			<aop:aspect ref="log">
+				<aop:before pointcut-ref="allpointcut" method="printlogging"/>
+			</aop:aspect>
+		</aop:config>
+		
+		
+<!--  	 <bean id="collectionbean" class="com.springbook.ioc.indjection.collectionbean">
 	 	<property name="addresslist">
 	 		<list>
 	 			<value>서울시 경남구 역삼동</value>
@@ -44,5 +63,5 @@
 	 			<prop key="피자는">피클이랑 양바랑 참꺠빵</prop>
 	 		</props>
 	 	</property>
-	 </bean>
+	 </bean>-->
 </beans>

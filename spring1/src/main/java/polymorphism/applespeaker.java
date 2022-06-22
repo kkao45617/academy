@@ -1,5 +1,8 @@
 package polymorphism;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class applespeaker implements speaker{
 	public applespeaker() {
 		System.out.println("applespeaker 객체 생성");

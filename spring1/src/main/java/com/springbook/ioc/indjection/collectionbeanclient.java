@@ -35,7 +35,7 @@ public class collectionbeanclient {
 		System.out.println("----------프로퍼티");
 		Properties proper=  bean.getAddproperties();
 		
-		System.out.println(proper+proper.getProperty(i));
+		
 		
 		factory.close();
 	}

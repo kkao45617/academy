@@ -1,6 +1,16 @@
 package polymorphism;
 
+import javax.annotation.Resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class samsungTV implements TV{
+	//@Autowired
+	//@Qualifier("applespeaker")
+	@Resource(name = "sonyspeaker" )
 	private speaker speaker;
 	private int price;
 	
@@ -17,7 +27,7 @@ public class samsungTV implements TV{
 	}
 
 	public samsungTV() {
-		System.out.println("생성자 호출 완료");
+		System.out.println("samsung 생성자 호출 완료");
 	}
 	
 	public samsungTV(speaker speaker) {
