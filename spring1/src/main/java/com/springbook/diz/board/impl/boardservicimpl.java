@@ -22,7 +22,9 @@ public class boardservicimpl implements boardservice {
 	
 	@Override
 	public void insertboard(boardVO vo) {
-	
+	/*	if(vo.getSeq()==0) {
+			throw new IllegalArgumentException("0번 글은 등록할 수 없습니다.\n");
+		}*/
 		boardDAO.insertboard(vo);
 	}
 

@@ -9,18 +9,24 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
 
-
+<!-- 
 		<context:component-scan base-package="com.springbook.diz"/>
 		
 		<bean id="log" class="com.springbook.diz.common.log4jadvice"></bean>
+		<bean id="afterreturning" class="com.springbook.diz.common.afterreturningadvice"></bean>
+		<bean id="exception" class="com.springbook.diz.common.afterthrowingadvice"></bean>
+		<bean id="around" class="com.springbook.diz.common.aroundadvice"></bean>
+		<bean id="before" class="com.springbook.diz.common.beforeadvice"></bean>
+		<bean id="after" class="com.springbook.diz.common.afterthrowingadvice"></bean>
 		
 		<aop:config>
-			<aop:pointcut expression="execution(* com.springbook.diz..*impl.*(..))" id="allpointcut"/>
-			<aop:aspect ref="log">
-				<aop:before pointcut-ref="allpointcut" method="printlogging"/>
+			<aop:pointcut expression="execution(* com.springbook.diz..*impl.get*(..))" id="allpointcut"/>
+			
+			<aop:aspect ref="before">
+				<aop:before pointcut-ref="allpointcut" method="printlog"/>
 			</aop:aspect>
 		</aop:config>
-		
+		 -->
 		
 <!--  	 <bean id="collectionbean" class="com.springbook.ioc.indjection.collectionbean">
 	 	<property name="addresslist">

@@ -7,7 +7,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class boardserviceclient {
 	public static void main(String[] args) {
-		AbstractApplicationContext container = new GenericXmlApplicationContext("appilcationcontext.xml");
+		AbstractApplicationContext container = new GenericXmlApplicationContext("appilcationcontext2.xml");
 		
 		boardservice boardservice =(boardservice)container.getBean("boardservice");
 		
