@@ -109,7 +109,7 @@
 					<Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="jdbc/myoracle" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="scott"/>
 					
 					</Context>
-			<Context docBase="jsp14" path="/jsp14" reloadable="true" source="org.eclipse.jst.jee.server:jsp14"/><Context docBase="mybatistest" path="/mybatis" reloadable="true" source="org.eclipse.jst.jee.server:mybatistest"/><Context docBase="spring2" path="/prj" reloadable="true" source="org.eclipse.jst.jee.server:spring2"/><Context docBase="spring1" path="/diz" reloadable="true" source="org.eclipse.jst.jee.server:spring1"/></Host>
+			<Context docBase="jsp14" path="/jsp14" reloadable="true" source="org.eclipse.jst.jee.server:jsp14"/><Context docBase="mybatistest" path="/mybatis" reloadable="true" source="org.eclipse.jst.jee.server:mybatistest"/><Context docBase="spring2" path="/prj" reloadable="true" source="org.eclipse.jst.jee.server:spring2"/><Context docBase="spring1" path="/" reloadable="true" source="org.eclipse.jst.jee.server:spring1"/></Host>
 		</Engine>
 	</Service>
 </Server>

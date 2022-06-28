@@ -18,7 +18,7 @@ public class boardDAO {
 	private ResultSet rs= null;
 	
 	private final String board_inster="insert into board(seq,title,writer,content) values((select nvl(max(seq),0)+1 from board),?,?,?)";
-	private final String board_update="update board set title=? content =? where seq=?";
+	private final String board_update="update board set title=?,content =? where seq=?";
 	private final String board_get = "select * from board where seq=?";
 	private final String board_list ="select * from board order by seq desc";
 	private final String board_delete = "delete board where seq=?";
@@ -47,20 +47,11 @@ public class boardDAO {
 		boardVO board=null;
 		try {
 			conn=JDBCutil.getConnection();
-			stmt=conn.prepareStatement(board_get);
-			stmt.setInt(1, vo.getSeq());
-			
-			if(rs.next()) {
-				board= new boardVO();
-				board.setSeq(rs.getInt("seq"));
-				board.setTitle(rs.getString("title"));
-				board.setWriter(rs.getString("writer"));
-				board.setContent(rs.getString("content"));
-				board.setRegdate(rs.getDate("regdate"));
-				board.setCnt(rs.getInt("cnt"));
-				
-			}
-			
+			stmt=conn.prepareStatement(board_update);
+			stmt.setString(1, vo.getTitle());
+			stmt.setString(2, vo.getContent());
+			stmt.setInt(3, vo.getSeq());
+			stmt.executeUpdate();
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -117,7 +108,9 @@ public class boardDAO {
 		try {
 			conn=JDBCutil.getConnection();
 			stmt= conn.prepareStatement(board_get);
-			stmt.executeQuery();
+			stmt.setInt(1, vo.getSeq());
+			rs=stmt.executeQuery();
+			
 			if(rs.next()) {
 				board=new boardVO();
 				board.setSeq(rs.getInt("seq"));
