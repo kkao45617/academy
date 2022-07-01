@@ -2,6 +2,7 @@
 <%@page import="com.springbook.biz.board.boardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,42 +11,38 @@
 </head>
 <body>
 <%
-	String seq= request.getParameter("seq");
-	boardVO vo=new boardVO();
-	vo.setSeq(Integer.parseInt(seq));
-	boardDAO DAO = new boardDAO();
-	boardVO board = DAO.getboard(vo);
 	
+	boardVO board= (boardVO)session.getAttribute("board");
 %>
 
 <h1>글상세</h1>
 <a href="logout_proc.jsp">로그아웃</a>
 <hr>
 
-<form action="updateboard_proc.jsp" method="post">
-<input type="hidden" name="seq" value="<%=board.getSeq()%>">
+<form action="updateboard.do" method="post">
+<input type="hidden" name="seq" value="${board.seq }">
 	<table border="1" cellpadding="0" cellspacing="0">
 		
 		<tr>
 			<td bgcolor="orange" width="70">제목</td>
-			<td align="left"><input name="title" type="text" value="<%=board.getTitle() %>"> </td>
+			<td align="left"><input name="title" type="text" value="${board.title }"> </td>
 		</tr>
 		
 		<tr>
 			<td bgcolor="orange">작성자</td>
-			<td align="left"><%=board.getWriter() %> </td>
+			<td align="left">${board.writer } </td>
 		</tr>
 		<tr>
 			<td bgcolor="orange">내용 </td>
-			<td align="left"><textarea name="content" rows="10" cols="40"><%=board.getContent() %> </textarea> </td>
+			<td align="left"><textarea name="content" rows="10" cols="40">${board.content} </textarea> </td>
 		</tr>
 		<tr>
 			<td bgcolor="orange">등록일</td>
-			<td align="left"><%=board.getRegdate() %> </td>
+			<td align="left">${board.regdate} </td>
 		</tr>
 		<tr>
 			<td bgcolor="orange"> 조회수</td>
-			<td align="left"><%=board.getCnt() %> </td>
+			<td align="left">${board.cnt } </td>
 		</tr>
 		<tr>
 			<td colspan="2" align="center"><input type="submit" value="글수정"> </td>
@@ -53,8 +50,8 @@
 	</table>
 
 </form>
-<a href="insertboard.jsp">글등록</a> 
-<a href="deleteboard_proc.jsp?seq=<%=board.getSeq() %>" > 글삭제</a> 
-<a href="getboardlist.jsp">글목록</a>
+<a href="insertboard.do">글등록</a> 
+<a href="deleteboard.do?seq=${board.seq }" > 글삭제</a> 
+<a href="../getboardlist.do">글목록</a>
 </body>
 </html>

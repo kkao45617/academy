@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
-    <fullyQualifiedTypeName name="employeesservlet.employupdate"/>
-    <fullyQualifiedTypeName name="employDAO.empolyDAO"/>
     <fullyQualifiedTypeName name="employeesVO.employeesVO"/>
     <fullyQualifiedTypeName name="sun.util.resources.cldr.ext.CurrencyNames_en_WS"/>
     <fullyQualifiedTypeName name="employcontroller.empolylist"/>
@@ -60,4 +57,7 @@
     <fullyQualifiedTypeName name="com.springbook.diz.board.common.logadvice"/>
     <fullyQualifiedTypeName name="com.springbook.diz.board.impl.boardservicimpl"/>
     <fullyQualifiedTypeName name="com.springbook.diz.board.common.log4jadvice"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
+    <fullyQualifiedTypeName name="com.springbook.view.controller.controller"/>
 </qualifiedTypeNameHistroy>

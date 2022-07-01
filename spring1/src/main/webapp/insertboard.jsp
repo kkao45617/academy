@@ -8,7 +8,7 @@
 </head>
 <body>
 <h2>사용자 글쓰기 칸</h2>
-	<form action="insert.jsp" method="post">
+	<form action="insertboard.do" method="post">
 		<table border="1" cellpadding="0" cellspacing="0">
 		
 		<tr>
