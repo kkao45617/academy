@@ -20,7 +20,7 @@ public class logoutcontroller implements Controller{
 		session.invalidate();
 		
 		ModelAndView mav= new ModelAndView();
-		mav.setViewName("login.jsp");
+		mav.setViewName("redirect:login.jsp");
 		
 		return mav;
 	}

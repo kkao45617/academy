@@ -23,7 +23,7 @@ public class deleteboardconteroller implements Controller{
 		DAO.deleteboard(vo);
 
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("getboardlist.do");
+		mav.setViewName("redirect:getboardlist.do");
 		return mav;
 	}
 	

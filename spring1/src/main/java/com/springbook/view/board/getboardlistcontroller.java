@@ -31,7 +31,7 @@ public class getboardlistcontroller implements Controller{
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("boardlist",boardlist);
-		mav.setViewName("getboardlist.jsp");
+		mav.setViewName("getboardlist");
 		
 		return mav;
 	}

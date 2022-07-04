@@ -32,9 +32,10 @@ public class logincontroller implements Controller{
 		
 		ModelAndView mav = new ModelAndView();
 		if(user != null) {
-			mav.setViewName("getboardlist.do");
+			mav.setViewName("redirect:getboardlist.do");
+			//mav.setViewName("getboardlist.do");
 		}else {
-			mav.setViewName("login.jsp");
+			mav.setViewName("redirect:login.jsp");
 		}
 		
 		return mav;

@@ -32,7 +32,7 @@ System.out.println("글 수정 처리");
 		DAO.updateboard(vo);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("getboardlist.do");
+		mav.setViewName("redirect:getboardlist.do");
 		return mav;
 	}
 
