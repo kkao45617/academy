@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import com.springbook.biz.board.boardVO;
-import com.springbook.biz.board.boardservice;
+import com.springbook.diz.board.boardVO;
+import com.springbook.diz.board.boardservice;
 import com.springbook.diz.common.log4jadvice;
 import com.springbook.diz.common.logadvice;
 
@@ -16,7 +16,7 @@ public class boardservicimpl implements boardservice {
 	
 	@Autowired
 	private boardDAO boardDAO;
-
+	//private boardDAOspring boardDAO;
 	
 	
 	

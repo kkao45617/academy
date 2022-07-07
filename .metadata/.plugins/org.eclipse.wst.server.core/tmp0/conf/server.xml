@@ -106,7 +106,7 @@
 
 
 				
-			<Context docBase="C:\project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\spring4" path="/diz" reloadable="true" source="org.eclipse.jst.jee.server:spring4"/></Host>
+			<Context docBase="C:\project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\spring4" path="/diz" reloadable="true" source="org.eclipse.jst.jee.server:spring4"/><Context docBase="C:\project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\mybatis2" path="/biz" reloadable="true" source="org.eclipse.jst.jee.server:mybatis2"/></Host>
 		</Engine>
 	</Service>
 </Server>

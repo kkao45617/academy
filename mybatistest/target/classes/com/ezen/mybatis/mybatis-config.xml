@@ -16,6 +16,6 @@
   </environments>
    <mappers>
 			<mapper resource="com/ezen/mybatis/boardMapper.xml" />
-		</mappers>
+	</mappers>
 
 </configuration>

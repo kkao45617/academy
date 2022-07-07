@@ -1,5 +1,5 @@
 <%@page import="com.springbook.diz.board.impl.boardDAO"%>
-<%@page import="com.springbook.biz.board.boardVO"%>
+<%@page import="com.springbook.diz.board.boardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -52,6 +52,6 @@
 </form>
 <a href="insertboard.do">글등록</a> 
 <a href="deleteboard.do?seq=${board.seq }" > 글삭제</a> 
-<a href="../getboardlist.do">글목록</a>
+<a href="getlistboard.do">글목록</a>
 </body>
 </html>

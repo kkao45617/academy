@@ -1,4 +1,4 @@
-<%@page import="com.springbook.biz.board.boardVO"%>
+<%@page import="com.springbook.diz.board.boardVO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.springbook.diz.board.impl.boardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -16,14 +16,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>테스트님 환영합니다 <a href="logout.do">로그아웃</a> </h3>
+<h3>${username }님 환영합니다 <a href="logout.do">로그아웃</a> </h3>
 	<form action="getlistboard.do" method="post">
 		<table border="1" cellpadding="0" cellspacing="0" width="700">
 			<tr>
 				<td align="right">
 					<select name="serchcondition">
-						<option value="title">제목
-						<option value="content">내용
+						<c:forEach items="${conditionmap }" var="option">
+							<option value="${option.value }">${option.key }
+						</c:forEach>
 					</select>
 					<input name="serchkeyword" type="text"/>
 					<input type="submit" value="검색">

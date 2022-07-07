@@ -8,7 +8,7 @@
 </head>
 <body>
 <h2>사용자 글쓰기 칸</h2>
-	<form action="insertboard.do" method="post">
+	<form action="insertboard.do" method="post" enctype="multipart/form-data">
 		<table border="1" cellpadding="0" cellspacing="0">
 		
 		<tr>
@@ -25,11 +25,15 @@
 			<td align="left"><textarea name="content" rows="10" cols="40"> </textarea> </td>
 		</tr>
 		<tr>
+			<td bgcolor="orange" width="70">업로드</td>
+			<td><input type="file" name="uploadfile"> </td>
+		</tr>
+		<tr>
 			<td colspan="2" align="center"><input type="submit" value="글쓰기"> </td>
 		</tr>
 	</table>
 	
 	</form>
-	<a href="getboardlist.do">글목록</a>
+	<a href="getlistboard.do">글목록</a>
 </body>
 </html>
