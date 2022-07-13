@@ -2,11 +2,10 @@ package org.zerock.mapper;
 
 import org.apache.ibatis.annotations.Select;
 
-public interface timemapper {
+public interface TimeMapper {
 	
 	@Select("select sysdate from dual")
-	public String gettime();
+	public String getTime();
 	
-	public String gettime2();
-	
+	public String getTime2();
 }
