@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
 <aop-project name="spring"/>
+<aop-project name="spring example"/>
 <aop-project name="mybatis2"/>
 <aop-project name="spring1"/>
 <aop-project name="spring2"/>
