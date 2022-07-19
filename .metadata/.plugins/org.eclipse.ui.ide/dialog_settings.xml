@@ -113,6 +113,7 @@
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
+			<item value="C:\project\spring example"/>
 		</list>
 	</section>
 	<section name="NewWizardAction">
