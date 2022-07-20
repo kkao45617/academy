@@ -43,5 +43,10 @@ public class BoardServiceImpl implements BoardService{
 	public List<BoardVO> getList(Criteria cri) {
 		return mapper.getListWithPagging(cri);
 	}
+
+	@Override
+	public int getTotal(Criteria cri) {
+		return mapper.getTotalcount(cri);
+	}
 	
 }

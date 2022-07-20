@@ -1,6 +1,8 @@
 package org.zerock.mapper;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -81,6 +83,20 @@ public class BoardMapperTests {
 		cri.setAmount(10);
 		pageDTO pageDTO = new pageDTO(cri, 316);
 		log.info(pageDTO);
+	}
+	
+	//서칭테스트
+	@Test
+	public void testsearchTest() {
+		Map<String, String> map = new HashMap<>();
+		map.put("T", "홍길동");
+		map.put("C", "도둑이야기");
+		map.put("W", "허균");
+		Map<String, Map<String, String>>outer = new HashMap<>();
+		
+		outer.put("map", map);
+		List<BoardVO> list= mapper.searchTest(outer);
+		log.info("서칭 결과"+ list);
 	}
 }
 
