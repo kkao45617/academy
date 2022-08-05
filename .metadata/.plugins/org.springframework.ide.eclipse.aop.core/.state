@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="spring example 1"/>
+<aop-project name="spring"/>
 <aop-project name="spring3"/>
 <aop-project name="spring1"/>
 <aop-project name="mybatis2"/>
-<aop-project name="spring example 1"/>
-<aop-project name="spring"/>
 <aop-project name="spring2"/>
 <aop-project name="spring4"/>
 <aop-project name="mybatistest"/>
+<aop-project name="RPA-Project"/>
 <aop-project name="ex00"/>
 <aop-project name="ex22"/>
-<aop-project name="spring example1"/>
 </aop-reference-model>
